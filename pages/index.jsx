@@ -2,6 +2,8 @@ import Head from "next/head";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import WebHostingComponent from "@/components/Hosting";
+import SSLComponent from "@/components/SSLCompent";
+import EmailComponent from "@/components/EmailComponent";
 
 const HomePage = () => {
 
@@ -163,7 +165,21 @@ const HomePage = () => {
         </div>
       </div>
       <div className="h-max w-full">
-        <WebHostingComponent />
+        <div className={`h-max w-full
+          ${hostingOperation === "web hosting" ? "block" : "hidden"}
+          `}>
+          <WebHostingComponent />
+        </div>
+        <div className={`h-max w-full
+          ${hostingOperation === "ssl hosting" ? "block" : "hidden"}
+          `}>
+          <SSLComponent />
+        </div>
+        <div className={`h-max w-full
+          ${hostingOperation === "email hosting" ? "block" : "hidden"}
+          `}>
+          <EmailComponent />
+        </div>
       </div>
     </section>
     </>
