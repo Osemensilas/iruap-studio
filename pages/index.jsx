@@ -182,6 +182,28 @@ const HomePage = () => {
         </div>
       </div>
     </section>
+    <section className="w-screen h-max px-2 sm:px-20 py-20 relative bg-bars">
+      <div className="w-full h-max flex flex-col justify-center items-center">
+        <h2 className="text-3xl sm:text-5xl font-semibold mb-10 text-accent text-center">Best Choice for Your Business</h2>
+        <p className="text-xl text-center mb-12 text-accent">We combine affordable pricing, reliable infrastructure, and 24/7 support to give you everything you need to succeed online. From first domain to enterprise grade hosting, we've got you covered.</p>
+        <Link href={"/"} className="bg-primary rounded text-text py-2 px-4">Get Started</Link>
+      </div>
+    </section>
+    <section className="h-max w-full flex flex-col sm:flex-row items-center py-20 bg-accent px-2 sm:px-20">
+      <div className="h-max w-full sm:w-1/2 flex justify-start mb-10 sm:mb-0">
+        <img src="/" alt="" />
+      </div>
+      <div className="h-max w-full sm:w-1/2">
+        <h2 className="text-3xl sm:text-4xl font-semibold mb-10 text-text text-start">Why Thousands Trust Us for Their Online Presence</h2>
+        <p className="text-base text-text text-start mb-5">We deliver lightening-fast servers, unbeatable pricing, and friendly support so you can focus on your business-not your hosting.</p>
+        <ul className="text-text text-start text-base list-disc pl-5">
+          <li>99% Uptime Guarantee - Your website stays online always.</li>
+          <li>Free SSL Certificate - Secure your site at no extra cost.</li>
+          <li>One-Click Setup - Get started in minutes</li>
+          <li>24/7 Expert Support - Real humans, ready to help anytime.</li>
+        </ul>
+      </div>
+    </section>
     </>
    );
 }
