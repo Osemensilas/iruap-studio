@@ -10,6 +10,7 @@ const HomePage = () => {
   const [domainOperation, setDomainOperation] = useState("register");
   const [hostingOperation, setHostingOperation] =useState("web hosting");
   const [domainOp, setDomainOp] = useState(true);
+  const [testimonialIndex, setTestimonialIndex] = useState(0);
 
   const domOpReg = () => {
     setDomainOperation("register");
@@ -69,6 +70,38 @@ const HomePage = () => {
       });
     }
   },[])
+
+  const testimonials = [
+    {
+      text: "IruHost made launching my business website easy and affordable. Their support team is always available and super helpful!",
+      name: "Chinedu Okafor",
+    },
+    {
+      text: "The uptime and speed are fantastic. I moved all my client sites to IruHost and never looked back.",
+      name: "Aisha Bello",
+    },
+    {
+      text: "SSL, email, and hosting all in one place—no hidden fees. I recommend IruHost to every entrepreneur.",
+      name: "Samuel Adeyemi",
+    },
+  ];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setTestimonialIndex((prev) => (prev + 1) % testimonials.length);
+    }, 10000); // 10 seconds
+    return () => clearInterval(interval);
+  }, []);
+
+  const handlePrev = () => {
+    setTestimonialIndex((prev) =>
+      prev === 0 ? testimonials.length - 1 : prev - 1
+    );
+  };
+
+const handleNext = () => {
+  setTestimonialIndex((prev) => (prev + 1) % testimonials.length);
+};
 
   const formSubmitted = (e) => {
     e.preventDefault();
@@ -211,6 +244,71 @@ const HomePage = () => {
       </div>
       <div className="h-max w-full sm:w-1/2 flex justify-end mb-10 sm:mb-0">
         <img src="/everything.jpg" className="h-[360px] w-[480px] rounded" alt="" />
+      </div>
+    </section>
+    <section className="h-max w-full flex flex-col sm:flex-row items-center py-20 bg-accent px-2 sm:px-20">
+      <div className="h-max w-full sm:w-1/2 flex justify-start mb-10 sm:mb-0">
+        <img src="/entreprenuer.jpg" className="h-[360px] w-[480px] rounded" alt="entreprenuer" />
+      </div>
+      <div className="h-max w-full sm:w-1/2">
+        <h2 className="text-3xl sm:text-4xl font-semibold mb-10 text-text text-start">Perfect for Entreprenuers, Creators and Agencies</h2>
+        <p className="text-base text-text text-start mb-5">Whether you're a small business owner, a freelancer, or a growing agency, we have have flexible plans designed to grow with you. No hidden fees. No complicated setup. Just reliable hosting you can trust.</p>
+      </div>
+    </section>
+    <section className="h-max w-full flex flex-col-reverse sm:flex-row items-center py-20 bg-accent px-2 sm:px-20">
+      <div className="h-max w-full sm:w-1/2">
+        <h2 className="text-3xl sm:text-4xl font-semibold mb-10 text-text text-start">Plans Starting for Just $1.67/Month</h2>
+        <p className="text-base text-text text-start mb-20">Get domain, hosting, email, and free SSL all in one simple package. No hidden fees. Upgrade anytime as you grow.</p>
+        <Link href={"/hosting.jsx"} className="bg-primary rounded text-text py-2 px-4">Choose Your Plan</Link>
+      </div>
+      <div className="h-max w-full sm:w-1/2 flex justify-end mb-10 sm:mb-0">
+        <img src="/started.jpg" className="h-[360px] w-[480px] rounded" alt="hosting" />
+      </div>
+    </section>
+    <section className="w-full h-max py-20 bg-background flex flex-col items-center justify-center">
+      <h2 className="text-3xl sm:text-4xl font-bold text-accent mb-10 text-center">What Our Clients Say</h2>
+      <div className="relative w-full max-w-xl mx-auto">
+        <div className="overflow-hidden">
+          <div
+            className="flex transition-transform duration-700"
+            style={{
+              transform: `translateX(-${testimonialIndex * 100}%)`,
+            }}
+          >
+            {testimonials.map((t, idx) => (
+              <div
+                key={idx}
+                className="min-w-full px-6 py-8 bg-white rounded-xl shadow flex flex-col items-center justify-center"
+              >
+                <p className="text-lg text-text mb-6 text-center italic">
+                  "{t.text}"
+                </p>
+                <div className="font-semibold text-primary text-center">
+                  {t.name}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+        {/* Navigation buttons, hidden on small screens */}
+        <div className="absolute top-1/2 left-0 -translate-y-1/2 sm:flex hidden">
+          <button
+            aria-label="Previous"
+            className="bg-primary text-white rounded-full shadow p-2 text-2xl"
+            onClick={handlePrev}
+          >
+            ‹
+          </button>
+        </div>
+        <div className="absolute top-1/2 right-0 -translate-y-1/2 sm:flex hidden">
+          <button
+            aria-label="Next"
+            className="bg-primary text-white rounded-full shadow p-2 text-2xl"
+            onClick={handleNext}
+          >
+            ›
+          </button>
+        </div>
       </div>
     </section>
     </>
