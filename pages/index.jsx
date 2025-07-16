@@ -204,6 +204,15 @@ const HomePage = () => {
         </ul>
       </div>
     </section>
+    <section className="h-max w-full flex flex-col-reverse sm:flex-row items-center py-20 bg-accent px-2 sm:px-20">
+      <div className="h-max w-full sm:w-1/2">
+        <h2 className="text-3xl sm:text-4xl font-semibold mb-10 text-text text-start">Everything You Need to go Online - In One Place</h2>
+        <p className="text-base text-text text-start">From registering your domain to hosting your site and securing it with SSL, we make it simple, fast, and affordable to build your digital brand.</p>
+      </div>
+      <div className="h-max w-full sm:w-1/2 flex justify-end mb-10 sm:mb-0">
+        <img src="/everything.jpg" className="h-[360px] w-[480px] rounded" alt="" />
+      </div>
+    </section>
     </>
    );
 }
