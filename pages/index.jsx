@@ -1,12 +1,12 @@
 import Head from "next/head";
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import WebHostingComponent from "@/components/Hosting";
 
 const HomePage = () => {
 
   const [domainOperation, setDomainOperation] = useState("register");
   const [hostingOperation, setHostingOperation] =useState("web hosting");
-  const [hostingOp, setHostingOp] = useState("web");
   const [domainOp, setDomainOp] = useState(true);
 
   const domOpReg = () => {
@@ -151,38 +151,19 @@ const HomePage = () => {
       <p className="text-center text-accent text-base text-semibold mb-10">Join the thousands of people who trust in IruHost to put their business online and make the look good doing it.</p>
       <div className="w-full h-max flex justify-center mb-20">
         <div className="h-max w-max bg-grey rounded">
-          <button onClick={webHost} className={`py-3 pl-3 pr-1 text-xl 
+          <button onClick={webHost} className={`py-3 pl-3 pr-1 text-base sm:text-xl 
             ${hostingOperation === "web hosting" ? "bg-primary rounded-l" : "opacity-50"}`
             }>Web Hosting</button>
-          <button onClick={emailHost} className={`py-3 px-3 text-xl
+          <button onClick={emailHost} className={`py-3 px-3 text-base sm:text-xl
             ${hostingOperation === "email hosting" ? "bg-primary" : "opacity-50"}
             `}>Email Hosting</button>
-          <button onClick={sslHost} className={`py-3 pr-3 pl-1 text-xl
+          <button onClick={sslHost} className={`py-3 pr-3 pl-1 text-base sm:text-xl
             ${hostingOperation === "ssl hosting" ? "bg-primary rounded-r" : "opacity-50"}
             `}>SSL Certificate</button>
         </div>
       </div>
       <div className="h-max w-full">
-        <div className=""></div>
-        <form className="h-max w-full flex justify-between items-center">
-          <div className="card border rounded border-grey py-8 px-3 w-1/4 h-[80vh] relative">
-            <h2 className="text-2xl font-semibold text-accent mb-4">Starter</h2>
-            <p className="text-accent text-sm mb-4">Ideal for beginner/personal website</p>
-            <p className="text-grey mb-4"><span className="line-through">$9.35</span> Save 80%</p>
-            <h2 className="text-3xl text-accent text-semibold mb-4">$1.87<span className="text-base">/month</span></h2>
-            <div className="w-full h-max border-t border-grey pt-4">
-              <p className="text-accent text-sm mb-1"><i className="fa fa-home text-accent mr-2"></i>1 Website</p>
-              <p className="text-accent text-sm mb-1"><i className="fa fa-users text-accent mr-2"></i>10,000 Monthly Visitors</p>
-              <p className="text-accent text-sm mb-1"><i className="fa fa-microchip text-accent mr-2"></i>1GB RAM</p>
-              <p className="text-accent text-sm mb-1"><i className="fa fa-server text-accent mr-2"></i>FREE CPANEL</p>
-              <p className="text-accent text-sm mb-1"><i className="fa fa-bolt text-accent mr-2"></i>FREE LiteSpeed</p>
-              <p className="text-accent text-sm mb-1"><i className="fa fa-certificate text-accent mr-2"></i>FREE SSL</p>
-            </div>
-            <div className="absolute top-[90%] left-0 h-max w-full px-3">
-              <button className="bg-primary w-full h-max text-text text-base font-bold py-2 rounded">ORDER NOW</button>
-            </div>
-          </div>
-        </form>
+        <WebHostingComponent />
       </div>
     </section>
     </>
