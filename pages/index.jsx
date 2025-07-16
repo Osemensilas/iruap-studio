@@ -99,9 +99,38 @@ const HomePage = () => {
     );
   };
 
-const handleNext = () => {
-  setTestimonialIndex((prev) => (prev + 1) % testimonials.length);
-};
+  const handleNext = () => {
+    setTestimonialIndex((prev) => (prev + 1) % testimonials.length);
+  };
+
+  const faqs = [
+    {
+      question: "How do I register a domain with IruHost?",
+      answer: "Simply use our domain search tool above, choose your preferred domain name, and follow the prompts to complete your registration.",
+    },
+    {
+      question: "Can I transfer my existing domain to IruHost?",
+      answer: "Yes! Click the 'Transfer' button, enter your domain, and follow the instructions. Our support team can assist if you need help.",
+    },
+    {
+      question: "Is SSL included with all hosting plans?",
+      answer: "Absolutely. Every hosting plan comes with a free SSL certificate to keep your site secure.",
+    },
+    {
+      question: "Do you offer 24/7 support?",
+      answer: "Yes, our expert support team is available 24/7 to help you with any issues or questions.",
+    },
+    {
+      question: "Can I upgrade my hosting plan later?",
+      answer: "You can upgrade your plan at any time as your business grows. No hidden fees or downtime.",
+    },
+  ];
+
+  const [faqOpen, setFaqOpen] = useState(null);
+
+  const handleFaqClick = (idx) => {
+    setFaqOpen(faqOpen === idx ? null : idx);
+  };
 
   const formSubmitted = (e) => {
     e.preventDefault();
@@ -309,6 +338,27 @@ const handleNext = () => {
             ›
           </button>
         </div>
+      </div>
+    </section>
+    <section className="w-full h-max py-20 bg-white flex flex-col items-center justify-center">
+      <h2 className="text-3xl sm:text-4xl font-bold text-text mb-10 text-center">Frequently Asked Questions</h2>
+      <div className="w-full max-w-2xl mx-auto">
+        {faqs.map((faq, idx) => (
+          <div key={idx} className="mb-4 border-b border-grey">
+            <button
+              className="w-full text-left py-4 px-2 text-lg font-semibold text-primary flex justify-between items-center focus:outline-none"
+              onClick={() => handleFaqClick(idx)}
+            >
+              {faq.question}
+              <span className="ml-2 text-grey">{faqOpen === idx ? "−" : "+"}</span>
+            </button>
+            {faqOpen === idx && (
+              <div className="py-2 px-2 text-base text-text bg-grey rounded-b">
+                {faq.answer}
+              </div>
+            )}
+          </div>
+        ))}
       </div>
     </section>
     </>
