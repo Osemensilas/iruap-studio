@@ -1,68 +1,144 @@
+import { useState, useEffect } from "react";
 import Link from "next/link";
-import { useState } from "react";
+import { useRouter } from "next/router";
 
 const Header = () => {
 
-    const [openDropDown, setOpenDropDown] = useState(false);
-    const [dropDownClicked, setOpenDropDownClicked] = useState('');
+    const router = useRouter();
+    const currentPath = router.pathname;
 
-    const dropDown = () => {
-        if (dropDownClicked === ''){
-            setOpenDropDownClicked('clicked');
-            setOpenDropDown(true);
+    let userId = "";
+
+    const [hamOpen, setHamOpen] = useState(false);
+    const [userPresent, setUserPresent] = useState(false);
+    
+    const hamClicked = () => {
+        if (!hamOpen){
+            setHamOpen(true);
         }else{
-            setOpenDropDownClicked('');
-            setOpenDropDown(false);
+            setHamOpen(false);
         }
     }
+
+    const linkClicked = () => {
+        setHamOpen(false);
+    }
+
+    useEffect(() => {
+        if (userId === ""){
+            setUserPresent(false);
+        }else{
+            setUserPresent(true);
+        }
+    },[userId])
+    
     return ( 
         <>
-        <header id="header" className="h-[80px] w-screen px-[40px] absolute bg-transparent z-[100] border-b border-grey">
-            <nav className="h-full w-full flex items-center justify-between">
-                <div className="h-max w-max flex items-center">
-                    <img src={"/logo.png"} className="h-[30px] w-[40px] cursor-pointer mr-[50px]" alt="logo" />
-                    <div className="h-max w-max">
-                        <ul className="flex items-center">
-                            <li className="h-max w-max mr-[15px] group">
-                                <Link className="text-accent group-hover:text-primary group-hover:underline transition-all duration-500" href="/">Hire Developer</Link>
-                            </li>
-                            <li className="h-max w-max mr-[15px] group">
-                                <Link className="text-accent group-hover:text-primary group-hover:underline transition-all duration-500" href="/">About Us</Link>
-                            </li>
-                            <li className="h-max w-max mr-[15px] group">
-                                <Link className="text-accent group-hover:text-primary group-hover:underline transition-all duration-500" href="/">Contact Us</Link>
-                            </li>
-                            <li className="h-max w-max mr-[15px] group">
-                                <Link className="text-accent group-hover:text-primary group-hover:underline transition-all duration-500" href="/">Work with Us</Link>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div className="h-max w-max flex items-center">
-                    <div id="services-nav" className="h-max w-max">
-                        <button onClick={dropDown} className={`flex items-center text-accent hover:text-primary transition-all duration-500 group
-                            ${openDropDown ? "border-b border-primary text-primary" : ""}
-                            `} >Services 
-                            <div className="ml-[5px] h-[20px] w-[20px] relative">
-                                <i className={`absolute top-[10px] left-[9px] h-[2px] w-[10px] bg-accent group-hover:bg-primary transition-all duration-500
-                                    ${openDropDown ? "rotate-45 bg-primary" : "-rotate-45"}
-                                    `}></i>
-                                <i className={`absolute top-[10px] left-[3px] h-[2px] w-[10px] bg-accent group-hover:bg-primary transition-all duration-500
-                                    ${openDropDown ? "-rotate-45 bg-primary" : "rotate-45"}
-                                    `}></i>
-                            </div>
-                        </button>
-                        <div id="services-nav-container" className={`absolute top-[80px] left-0 h-[50vh] w-screen transition-all duration-500
-                            ${openDropDown ? "block bg-background" : "hidden"}
-                            `}>
-                            <Link href={"/"}>Screen Recorder</Link>
+        <header id="header" className="relative h-[100px] w-screen bg-background px-2 sm:px-10">
+            <div className="header h-full w-full flex items-center justify-between">
+                <Link href={"/"} className="header-left h-[40px] w-[60px]">
+                    <img src="./logo.png" alt="" className=" h-full w-full cursor-pointer" />
+                </Link>
+                <nav className="h-full w-max hidden sm:block">
+                    <ul className="h-full w-max flex items-center gap-10">
+                        <li>
+                            <Link onClick={linkClicked} className={`link
+                                ${currentPath === "/domain" ? "active" : ""}
+                                `} href={"/domain"}>Domain</Link>
+                        </li>
+                        <li>
+                            <Link onClick={linkClicked} className={`link
+                                ${currentPath === "/hosting" ? "active" : ""}
+                                `} href={"/hosting"}>Hosting</Link>
+                        </li>
+                        <li>
+                            <Link onClick={linkClicked} className={`link
+                                 ${currentPath === "/ssl" ? "active" : ""}
+                                `} href={"/ssl"}>SSL</Link>
+                        </li>
+                        <li>
+                            <Link onClick={linkClicked} className={`link
+                                ${currentPath === "/email" ? "active" : ""}
+                                `} href={"/email"}>Email</Link>
+                        </li>
+                        <li>
+                            <Link onClick={linkClicked} className={`link
+                                ${currentPath === "/web-development" ? "active" : ""}
+                                `} href={"/web-development"}>Web Development</Link>
+                        </li>
+                    </ul>
+                </nav>
+                <div className="header-right h-max w-max flex items-center gap-10">
+                    <div className="">
+                        <div className="">
+                            <Link href="/signin" className={`text-accent border-accent py-2 px-4 rounded border
+                                ${userPresent ? "hidden" : "block"}
+                                `}>Login</Link>
+                        </div>
+                        <div className="">
+                            <Link onClick={linkClicked} href="/dashboard" className={`dashboard text-accent
+                                ${userPresent ? "block" : "hidden"}
+                                ${currentPath === "/dashboard" ? "active" : ""}
+                                `}><span><i className="fa fa-user text-2xl"></i></span> Dashboard</Link>
                         </div>
                     </div>
-                    <div className="ml-[50px] h-max w-max">
-                        <Link className="text-text py-[10px] px-[25px] rounded outline-none border-none bg-primary" href={"/"}>Sign In</Link>
-                    </div>
+                    <button onClick={hamClicked} className={`hamburger
+                        ${hamOpen ? "active" : ""}
+                        `}>
+                        <div className={`hammer
+                            ${hamOpen ? "active" : ""}
+                            `}></div>
+                    </button>
                 </div>
-            </nav>
+            </div>
+            <div className={`nav-container absolute top-[100%] left-0 w-screen bg-background
+                ${hamOpen ? "active":""}
+                `}>
+                    <nav className="w-full h-full overflow-y-auto">
+                        <ul className="w-full h-max flex flex-wrap items-center">
+                            <li className={`responsive-link-container w-full sm:w-1/2
+                                ${currentPath === "/domain" ? "active" : ""}
+                                `}>
+                                <Link onClick={linkClicked} className="w-full h-full p-3 flex flex-col" href={"/domain"}>
+                                    <h2 className="py-3 border-b border-grey mb-2 text-2xl font-bold text-accent">Domain Name</h2>
+                                    <p className="text-accent text-base">Get good domain name</p>
+                                </Link>
+                            </li>
+                            <li className={`responsive-link-container w-full sm:w-1/2
+                                ${currentPath === "/hosting" ? "active" : ""}
+                                `}>
+                                <Link onClick={linkClicked} className="w-full h-full p-3 flex flex-col" href={"/domain"}>
+                                    <h2 className="py-3 border-b border-grey mb-2 text-2xl font-bold text-accent">Hosting</h2>
+                                    <p className="text-accent text-base">Get good domain name</p>
+                                </Link>
+                            </li>
+                            <li className={`responsive-link-container w-full sm:w-1/2
+                                ${currentPath === "/ssl" ? "active" : ""}
+                                `}>
+                                <Link onClick={linkClicked} className="w-full h-full p-3 flex flex-col" href={"/ssl"}>
+                                    <h2 className="py-3 border-b border-grey mb-2 text-2xl font-bold text-accent">SSL Certificate</h2>
+                                    <p className="text-accent text-base">Secure your website</p>
+                                </Link>
+                            </li>
+                            <li className={`responsive-link-container w-full sm:w-1/2
+                                ${currentPath === "/email" ? "active" : ""}
+                                `}>
+                                <Link onClick={linkClicked} className="w-full h-full p-3 flex flex-col" href={"/email"}>
+                                    <h2 className="py-3 border-b border-grey mb-2 text-2xl font-bold text-accent">Email</h2>
+                                    <p className="text-accent text-base">Get professional email address</p>
+                                </Link>
+                            </li>
+                            <li className={`responsive-link-container w-full sm:w-1/2
+                                ${currentPath === "/web-development" ? "active" : ""}
+                                `}>
+                                <Link onClick={linkClicked} className="w-full h-full p-3 flex flex-col" href={"/web-development"}>
+                                    <h2 className="py-3 border-b border-grey mb-2 text-2xl font-bold text-accent">Let Us build your website</h2>
+                                    <p className="text-accent text-base">Get good good website</p>
+                                </Link>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
         </header>
         </>
      );
