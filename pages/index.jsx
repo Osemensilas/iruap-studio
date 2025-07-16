@@ -183,13 +183,13 @@ const HomePage = () => {
       <p className="text-center text-accent text-base text-semibold mb-10">Join the thousands of people who trust in IruHost to put their business online and make the look good doing it.</p>
       <div className="w-full h-max flex justify-center mb-20">
         <div className="h-max w-max bg-grey rounded">
-          <button onClick={webHost} className={`py-3 pl-3 pr-1 text-base sm:text-xl 
+          <button onClick={webHost} className={`py-3 pl-3 pr-1 text-sm sm:text-xl 
             ${hostingOperation === "web hosting" ? "bg-primary rounded-l" : "opacity-50"}`
             }>Web Hosting</button>
-          <button onClick={emailHost} className={`py-3 px-3 text-base sm:text-xl
+          <button onClick={emailHost} className={`py-3 px-3 text-sm sm:text-xl
             ${hostingOperation === "email hosting" ? "bg-primary" : "opacity-50"}
             `}>Email Hosting</button>
-          <button onClick={sslHost} className={`py-3 pr-3 pl-1 text-base sm:text-xl
+          <button onClick={sslHost} className={`py-3 pr-3 pl-1 text-sm sm:text-xl
             ${hostingOperation === "ssl hosting" ? "bg-primary rounded-r" : "opacity-50"}
             `}>SSL Certificate</button>
         </div>
@@ -329,10 +329,10 @@ const HomePage = () => {
         ))}
       </div>
     </section>
-    <section className="h-max w-screen py-10 px-3 sm:px-20 bg-background">
+    <section className="h-max w-screen py-10 px-3 sm:px-20 bg-bars">
         <div className="h-full w-full flex flex-col sm:flex-row items-center justify-center gap-3">
             <div class="h-max w-max">
-                <h2 className="font-bold text-3xl text-accent mb-5 sm:mb-0">Buy your domain. Build your brand.</h2>
+                <h2 className="font-bold text-base sm:text-3xl text-accent mb-5 sm:mb-0">Buy your domain. Build your brand.</h2>
             </div>
             <div class="h-max w-max">
                 <Link href={"/domain.jsx"} class="bg-primary rounded text-text py-2 px-4">Find your domain</Link>
