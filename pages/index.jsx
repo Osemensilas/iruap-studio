@@ -4,21 +4,12 @@ import Link from "next/link";
 import WebHostingComponent from "@/components/Hosting";
 import SSLComponent from "@/components/SSLCompent";
 import EmailComponent from "@/components/EmailComponent";
+import DomainComponent from "@/components/DomainComponent";
 
 const HomePage = () => {
 
-  const [domainOperation, setDomainOperation] = useState("register");
   const [hostingOperation, setHostingOperation] =useState("web hosting");
-  const [domainOp, setDomainOp] = useState(true);
   const [testimonialIndex, setTestimonialIndex] = useState(0);
-
-  const domOpReg = () => {
-    setDomainOperation("register");
-  }
-
-  const domOpTrans = () => {
-    setDomainOperation("transfer");
-  }
 
   const webHost = () => {
     setHostingOperation("web hosting");
@@ -26,6 +17,7 @@ const HomePage = () => {
 
   const emailHost = () => {
     setHostingOperation("email hosting");
+
   }
 
   const sslHost = () => {
@@ -33,12 +25,6 @@ const HomePage = () => {
   }
 
   useEffect(() => {
-    if (domainOperation === 'register'){
-      setDomainOp(true);
-    }else{
-      setDomainOp(false);
-    }
-
     if (hostingOperation === 'web hosting'){
       setHostingOperation("web hosting");
     }else if(hostingOperation === "email hosting"){
@@ -46,7 +32,7 @@ const HomePage = () => {
     }else {
       setHostingOperation("ssl hosting");
     }
-  },[domainOperation, hostingOperation])
+  },[hostingOperation])
 
   useEffect(() => {
     const scrollers = document.querySelectorAll(".scroller");
@@ -132,9 +118,6 @@ const HomePage = () => {
     setFaqOpen(faqOpen === idx ? null : idx);
   };
 
-  const formSubmitted = (e) => {
-    e.preventDefault();
-  }
   return ( 
     <>
     <Head>
@@ -143,22 +126,7 @@ const HomePage = () => {
     <section id="hero" className="h-[calc(100vh-100px)] w-screen bg-transparent">
       <div className="h-full w-full flex flex-col justify-center items-center px-2 sm:px-20">
         <h2 className="font-bold text-accent text-3xl sm:text-5xl mb-10">Find everything you need to go digital</h2>
-        <form onSubmit={formSubmitted} className="h-max w-full sm:w-1/2">
-          <div className="h-max w-full flex items-center justify-center mb-10">
-            <div className="h-max w-max bg-grey rounded">
-              <button onClick={domOpReg} className={`py-3 pl-3 pr-1 text-xl
-                ${domainOp ? "bg-primary rounded-l" : "opacity-50"}
-                `}>Register</button>
-              <button onClick={domOpTrans} className={`py-3 pr-3 pl-1 text-xl
-                ${domainOp ? "opacity-50" : "bg-primary rounded-r"}
-                `}>Transfer</button>
-            </div>
-          </div>
-          <div className="w-full h-max flex items-center">
-            <input type="text" className="h-[45px] rounded-l w-[80%] outline-none text-base px-5" placeholder="Search domain name" />
-            <button className="h-[45px] w-[20%] bg-primary rounded-r text-text text-base">Search</button>
-          </div>
-        </form>
+          <DomainComponent />
         <div className="h-max w-full flex items-center justify-center mt-10">
           <p className="text-accent text-base">Popular Series:</p>
           <ul className="h-max w-max flex items-center gap-5 ml-5">
@@ -360,6 +328,16 @@ const HomePage = () => {
           </div>
         ))}
       </div>
+    </section>
+    <section className="h-max w-screen py-10 px-3 sm:px-20 bg-background">
+        <div className="h-full w-full flex flex-col sm:flex-row items-center justify-center gap-3">
+            <div class="h-max w-max">
+                <h2 className="font-bold text-3xl text-accent mb-5 sm:mb-0">Buy your domain. Build your brand.</h2>
+            </div>
+            <div class="h-max w-max">
+                <Link href={"/domain.jsx"} class="bg-primary rounded text-text py-2 px-4">Find your domain</Link>
+            </div>
+        </div>
     </section>
     </>
    );
