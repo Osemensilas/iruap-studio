@@ -165,14 +165,21 @@ const HomePage = () => {
       <div className="h-max w-full">
         <div className=""></div>
         <form className="h-max w-full flex justify-between items-center">
-          <div className="card border rounded border-grey py-8 px-3 w-1/4 h-[80vh]">
+          <div className="card border rounded border-grey py-8 px-3 w-1/4 h-[80vh] relative">
             <h2 className="text-2xl font-semibold text-accent mb-4">Starter</h2>
-            <p>Ideal for beginner/personal website</p>
-            <p><span>$9.35</span> Save 80%</p>
-            <h2>$1.87</h2>
-            <div className="">
-              <p><i className="fa fa-home"></i>1 Website</p>
-              <p><i className="fa fa-microchip"></i>1GB RAM</p>
+            <p className="text-accent text-sm mb-4">Ideal for beginner/personal website</p>
+            <p className="text-grey mb-4"><span className="line-through">$9.35</span> Save 80%</p>
+            <h2 className="text-3xl text-accent text-semibold mb-4">$1.87<span className="text-base">/month</span></h2>
+            <div className="w-full h-max border-t border-grey pt-4">
+              <p className="text-accent text-sm mb-1"><i className="fa fa-home text-accent mr-2"></i>1 Website</p>
+              <p className="text-accent text-sm mb-1"><i className="fa fa-users text-accent mr-2"></i>10,000 Monthly Visitors</p>
+              <p className="text-accent text-sm mb-1"><i className="fa fa-microchip text-accent mr-2"></i>1GB RAM</p>
+              <p className="text-accent text-sm mb-1"><i className="fa fa-server text-accent mr-2"></i>FREE CPANEL</p>
+              <p className="text-accent text-sm mb-1"><i className="fa fa-bolt text-accent mr-2"></i>FREE LiteSpeed</p>
+              <p className="text-accent text-sm mb-1"><i className="fa fa-certificate text-accent mr-2"></i>FREE SSL</p>
+            </div>
+            <div className="absolute top-[90%] left-0 h-max w-full px-3">
+              <button className="bg-primary w-full h-max text-text text-base font-bold py-2 rounded">ORDER NOW</button>
             </div>
           </div>
         </form>
