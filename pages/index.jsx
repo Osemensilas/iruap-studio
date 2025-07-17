@@ -143,35 +143,35 @@ const HomePage = () => {
                 <li>
                     <div className="imgs-container">
                         <div className="system-img-container">
-                            <img src="assets/imgs/Screenshot (310).png" alt="" className="system-img scroller-img" />
+                            <img src="cpanel-seeklogo.png" alt="" className="system-img scroller-img" />
                         </div>
                     </div>
                 </li>
                 <li>
                     <div className="imgs-container">
                         <div className="system-img-container">
-                            <img src="assets/imgs/Screenshot (307).png" alt="" className="system-img scroller-img" />
+                            <img src="Lets-Encrypt-Logo.png" alt="" className="system-img scroller-img" />
                         </div>
                     </div>
                 </li>
                 <li>
                     <div className="imgs-container">
                         <div className="system-img-container">
-                            <img src="assets/imgs/Screenshot (304).png" alt="" className="system-img scroller-img" />
+                            <img src="whmcs_logo_white_green.png" alt="" className="system-img scroller-img" />
                         </div>
                     </div>
                 </li>
                 <li>
                     <div className="imgs-container">
                         <div className="system-img-container">
-                            <img src="assets/imgs/Screenshot (304).png" alt="" className="system-img scroller-img" />
+                            <img src="icann-seeklogo.png" alt="" className="system-img scroller-img" />
                         </div>
                     </div>
                 </li>
                 <li>
-                    <div className="imgs-container">
+                    <div className="h-[100px] w-[60px]">
                         <div className="system-img-container">
-                            <img src="assets/imgs/Screenshot (304).png" alt="" className="system-img scroller-img" />
+                            <img src="figma-seeklogo.png" alt="" className="system-img scroller-img" />
                         </div>
                     </div>
                 </li>

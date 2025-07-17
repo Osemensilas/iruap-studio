@@ -19,10 +19,10 @@ const Footer = () => {
         <div>
           <h3 className="text-white font-semibold mb-3">Services</h3>
           <ul className="space-y-2 text-sm">
-            <li><i className="fa fa-server text-accent mr-2"></i><Link href={"/hosting.jsx"} className="hover:text-white">Web Hosting</Link></li>
-            <li><i className="fa fa-users text-accent mr-2"></i><Link href={"/domain.jsx"} className="hover:text-white">Doamin Registration</Link></li>
-            <li><i className="fa fa-hdd text-accent mr-2"></i><Link href={"/email.jsx"} className="hover:text-white">Email Hosting</Link></li>
-            <li><i className="fa fa-database text-accent mr-2"></i><Link href={"/ssl.jsx"} className="hover:text-white">SSL Certificate</Link></li>
+            <li><i className="fa fa-server text-accent mr-2"></i><Link href={"/hosting"} className="hover:text-white">Web Hosting</Link></li>
+            <li><i className="fa fa-globe text-accent mr-2"></i><Link href={"/domain"} className="hover:text-white">Domain Registration</Link></li>
+            <li><i className="fa fa-envelope text-accent mr-2"></i><Link href={"/email"} className="hover:text-white">Email Hosting</Link></li>
+            <li><i className="fa fa-shield text-accent mr-2"></i><Link href={"/ssl"} className="hover:text-white">SSL Certificate</Link></li>
           </ul>
         </div>
 
