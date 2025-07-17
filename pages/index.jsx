@@ -125,7 +125,7 @@ const HomePage = () => {
     </Head>
     <section id="hero" className="h-[calc(100vh-100px)] w-screen bg-transparent">
       <div className="h-full w-full flex flex-col justify-center items-center px-2 sm:px-20">
-        <h1 className="font-bold text-accent text-center text-3xl sm:text-5xl mb-10">Affordable hosting, domains, SSL, and email—all in one place</h1>
+        <h1 className="font-bold text-accent text-center text-3xl sm:text-5xl mb-10">Affordable hosting, domains, SSL, and email. All in one place</h1>
           <DomainComponent />
         <div className="h-max w-full flex items-center justify-center mt-10">
           <p className="text-accent text-base">Popular Series:</p>
