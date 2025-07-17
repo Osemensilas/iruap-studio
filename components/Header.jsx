@@ -68,8 +68,8 @@ const Header = () => {
                         </li>
                     </ul>
                 </nav>
-                <div className="header-right h-max w-max flex items-center gap-10">
-                    <div className="">
+                <div className="header-right h-max w-max flex items-center gap-4 sm:gap-10">
+                    <div className="h-max w-max flex items-center gap-1 sm:gap-4">
                         <div className="">
                             <Link href="/signin" className={`text-accent border-accent py-2 px-4 rounded border
                                 ${userPresent ? "hidden" : "block"}
@@ -80,6 +80,12 @@ const Header = () => {
                                 ${userPresent ? "block" : "hidden"}
                                 ${currentPath === "/dashboard" ? "active" : ""}
                                 `}><span><i className="fa fa-user text-2xl"></i></span> Dashboard</Link>
+                        </div>
+                        <div className="">
+                            <Link onClick={linkClicked} href={"/cart"}>
+                                <i className="fa fa-shopping-cart text-2xl text-accent"></i>
+                                <span>0</span>
+                            </Link>
                         </div>
                     </div>
                     <button onClick={hamClicked} className={`hamburger
