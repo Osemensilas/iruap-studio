@@ -54,7 +54,7 @@ const Footer = () => {
 
       {/* Bottom Bar */}
       <div className="border-t border-gray-700 mt-10 pt-4 text-sm text-gray-500 text-center">
-        <p>&copy; {new Date().getFullYear()} YourBrand. All rights reserved.</p>
+        <p>&copy; {new Date().getFullYear()} IruHost. All rights reserved.</p>
         <div className="mt-2 flex justify-center space-x-4">
           <a href="#" className="hover:text-white"><i className="fa fa-lock mr-1 text-accent"></i> Privacy Policy</a>
           <a href="#" className="hover:text-white"><i className="fa fa-file-contract mr-1 text-accent"></i> Terms of Service</a>
