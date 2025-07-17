@@ -141,7 +141,7 @@ const HomePage = () => {
         <div className="scroller" data-direction="left">
             <ul className="tag-list scroller_inner">
                 <li>
-                    <div className="imgs-container">
+                    <div className="h-[70px] w-[200px]">
                         <div className="system-img-container">
                             <img src="cpanel-seeklogo.png" alt="" className="system-img scroller-img" />
                         </div>
