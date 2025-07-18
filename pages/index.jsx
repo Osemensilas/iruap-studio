@@ -216,7 +216,7 @@ const HomePage = () => {
       <div className="w-full h-max flex flex-col justify-center items-center">
         <h2 className="text-3xl sm:text-5xl font-semibold mb-10 text-accent text-center">Best Choice for Your Business</h2>
         <p className="text-xl text-center mb-12 text-accent">We combine affordable pricing, reliable infrastructure, and 24/7 support to give you everything you need to succeed online. From first domain to enterprise grade hosting, we've got you covered.</p>
-        <Link href={"/"} className="bg-primary rounded text-text py-2 px-4">Get Started</Link>
+        <Link href={"/domain"} className="bg-primary rounded text-text py-2 px-4">Get Started</Link>
       </div>
     </section>
     <section className="h-max w-full flex flex-col sm:flex-row items-center py-20 bg-accent px-2 sm:px-20">
@@ -256,7 +256,7 @@ const HomePage = () => {
       <div className="h-max w-full sm:w-1/2">
         <h2 className="text-3xl sm:text-4xl font-semibold mb-10 text-text text-start">Plans Starting for Just $1.67/Month</h2>
         <p className="text-base text-text text-start mb-20">Get domain, hosting, email, and free SSL all in one simple package. No hidden fees. Upgrade anytime as you grow.</p>
-        <Link href={"/hosting.jsx"} className="bg-primary rounded text-text py-2 px-4">Choose Your Plan</Link>
+        <Link href={"/hosting"} className="bg-primary rounded text-text py-2 px-4">Choose Your Plan</Link>
       </div>
       <div className="h-max w-full sm:w-1/2 flex justify-end mb-10 sm:mb-0">
         <img src="/started.jpg" className="h-[360px] w-[480px] rounded" alt="hosting" />
@@ -335,7 +335,7 @@ const HomePage = () => {
                 <h2 className="font-bold text-base sm:text-3xl text-accent mb-5 sm:mb-0">Buy your domain. Build your brand.</h2>
             </div>
             <div class="h-max w-max">
-                <Link href={"/domain.jsx"} class="bg-primary rounded text-text py-2 px-4">Find your domain</Link>
+                <Link href={"/domain"} class="bg-primary rounded text-text py-2 px-4">Find your domain</Link>
             </div>
         </div>
     </section>
