@@ -48,6 +48,10 @@ body {
   text-decoration: underline;
 }
 
+.cards-shadow{
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+}
+
 .hamburger{
   height: 40px;
   width: 40px;
