@@ -3,13 +3,19 @@ import WebHostingComponent from "@/components/Hosting";
 const Hosting = () => {
     return ( 
         <>
-        <section id="hero" className="h-[calc(100vh-100px)] w-screen bg-transparent">
+        <section id="hero" className="h-[calc(100vh-100px)] w-screen bg-background">
             <div className="h-full w-full flex flex-col justify-center items-center px-2 sm:px-20">
                 <h1 className="font-bold text-accent text-center text-3xl sm:text-5xl mb-10">Fast, Secure & Affordable Web Hosting for Everyone</h1>
                 <p className="text-accent text-base font-semibold mb-10">Get reliable hosting with free SSL, business email, and 99.9% uptime—starting at just $X/month</p>
                 <a href="#hostings" className="bg-primary rounded text-text py-2 px-4">Choose a Plan</a>
             </div>
         </section>
+        <div className="w-screen h-max py-[50px] sm:py-[100px] px-3 sm:px-10 text-accent">
+            <h2 className="mb-10 text-center text-xl sm:text-3xl font-semibold">Claim your FREE 1-year domain when you go Pro annually</h2>
+            <div className="h-max w-full flex items-center justify-center mt-10">
+                <a href="#hostings" className="bg-primary rounded text-text py-2 px-4">Subscribe Now</a>
+            </div>
+        </div>
         <section id="hostings" className="h-max w-screen px-3 sm:px-10 py-[50px] bg-background">
             <h2 className="pb-[50px] text-center text-xl sm:text-3xl font-bold text-accent">Choose Plan</h2>
             <WebHostingComponent />
@@ -60,6 +66,9 @@ const Hosting = () => {
                     <p className="py-3 text-center text-sm">No risk. No hassle. Just 30 days of worry-free hosting</p>
                 </div>
             </div>
+        </section>
+        <section>
+            
         </section>
         </>
      );
