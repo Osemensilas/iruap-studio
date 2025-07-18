@@ -40,7 +40,7 @@ const Footer = () => {
         {/* Contact & Social Icons */}
         <div>
           <h3 className="text-white font-semibold mb-3">Contact</h3>
-          <p className="text-sm mb-3"><i className="fa fa-clock text-accent mr-2"></i> 24/7 Support Available</p>
+          <p className="text-sm mb-3"><i className="fa fa-life-ring text-accent mr-2"></i> 24/7 Support Available</p>
           <p className="text-sm mb-3"><i className="fa fa-envelope text-accent mr-2"></i> support@yourbrand.com</p>
           <div className="flex space-x-4 mt-4 text-lg">
             <a href="#" className="hover:text-white"><i className="fa fa-facebook text-accent"></i></a>

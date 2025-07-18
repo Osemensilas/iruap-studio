@@ -37,7 +37,7 @@ const Hosting = () => {
                     <h2 className="py-3 text-center text-xl font-semibold">Free SSL Certificates</h2>
                     <p className="py-3 text-center text-sm"> Keep your site secure at no extra cost</p>
                 </div>
-                <div className="h-[270px] w-[360px] rounded cards-shadow p-3 mb-0">
+                <div className="h-[270px] w-[360px] rounded cards-shadow p-3 mb-10">
                     <div className="h-[40%] w-full flex justify-center items-center">
                         <img className="h-[80px] w-[80px]" src="/email-icon.png" alt="" />
                     </div>
@@ -68,7 +68,7 @@ const Hosting = () => {
             </div>
         </section>
         <section>
-            
+
         </section>
         </>
      );
