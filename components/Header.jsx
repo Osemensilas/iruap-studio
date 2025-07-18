@@ -82,9 +82,9 @@ const Header = () => {
                                 `}><span><i className="fa fa-user text-2xl"></i></span> Dashboard</Link>
                         </div>
                         <div className="">
-                            <Link onClick={linkClicked} href={"/cart"}>
+                            <Link className="h-max w-max flex items-center" onClick={linkClicked} href={"/cart"}>
                                 <i className="fa fa-shopping-cart text-2xl text-accent"></i>
-                                <span>0</span>
+                                <span className="ml-2 text-accent text-xs py-1 px-3 border border-accent rounded">0</span>
                             </Link>
                         </div>
                     </div>

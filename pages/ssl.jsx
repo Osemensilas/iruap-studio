@@ -72,7 +72,7 @@ const SSL = () => {
                     <div>
                         <h3 className="text-xl font-semibold text-accent mb-2">Top-Tier Support</h3>
                         <p className="text-base text-accent">
-                        Ossilhost has gained a reputation for delivering exceptional customer service, attributed to our outstanding support team. The professionals at Ossilhost support stand out as among the most courteous and informative individuals in
+                        Iruhost has gained a reputation for delivering exceptional customer service, attributed to our outstanding support team. The professionals at Iruhost support stand out as among the most courteous and informative individuals in
                         the industry, possessing an extensive understanding of each product and service we provide. With their around-the-clock availability, you can have peace of mind knowing that they are ready to address your inquiries and provide
                         guidance concerning your SSL certificate acquisition.
                         </p>
@@ -80,8 +80,8 @@ const SSL = () => {
                     <div>
                         <h3 className="text-xl font-semibold text-accent mb-2">Browser Ubiquity</h3>
                         <p className="text-base text-accent">
-                        Ossilhost's specialists have carefully curated our range of SSL certificates to guarantee extensive compatibility with widely-used browsers. Our certificates are endorsed by all major browsers, ensuring that no matter which browser
-                        you choose, Ossilhost's SSL verification will be acknowledged, thus ensuring a seamless browsing experience. This eliminates any uncertainty for your users about the authenticity of the certificate issuer or the assurance of protection.
+                        Iruhost's specialists have carefully curated our range of SSL certificates to guarantee extensive compatibility with widely-used browsers. Our certificates are endorsed by all major browsers, ensuring that no matter which browser
+                        you choose, Iruhost's SSL verification will be acknowledged, thus ensuring a seamless browsing experience. This eliminates any uncertainty for your users about the authenticity of the certificate issuer or the assurance of protection.
                         </p>
                     </div>
                     <div>
