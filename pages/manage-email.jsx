@@ -97,17 +97,18 @@ const ManageEmail = () => {
                                 <i className="fa fa-lock text-accent"></i>
                             </div>
                             <input type="password" name="mailbox" value={formData.password} onChange={handleChanged} placeholder="info" className="h-10 w-full border text-accent outline-none border-silver mb-1 rounded-r px-2 bg-transparent" />
-                            <button type="button" className="absolute top-[10px] left-[90%] text-sm text-primary">Show</button>
+                            <button type="button" className="absolute top-[10px] left-[95%] text-sm text-primary">Show</button>
                         </div>
                         <p className="text-sm text-text">Use a strong password to keep your email secured</p>
                     </div>
-                    <div className="h-max w-full gap-4 flex flex-col">
+                    <div className="h-max w-full gap-4 flex flex-col relative">
                         <label htmlFor="confirmPassword" className="text-base text-accent">Confirm Password</label>
                         <div className="h-max w-full flex">
                             <div className="h-10 w-10 border border-grey bg-grey rounded-l flex items-center justify-center">
                                 <i className="fa fa-lock text-accent"></i>
                             </div>
                             <input type="password" name="confirmPasswor" value={formData.confirmPassword} onChange={handleChanged} placeholder="info" className="h-10 w-full border text-accent outline-none border-silver mb-1 rounded-r px-2 bg-transparent" />
+                            <button type="button" className="absolute top-[10px] left-[95%] text-sm text-primary">Show</button>
                         </div>
                         <p className="text-sm text-text">Re-enter your your password</p>
                     </div>
