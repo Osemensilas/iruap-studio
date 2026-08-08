@@ -41,8 +41,6 @@ const Dashboard = () => {
                 },withCredentials: true
  
             })
-
-            console.log(response.data);
             
             if (response.data.status === 'success'){
                 setProducts(response.data.products);

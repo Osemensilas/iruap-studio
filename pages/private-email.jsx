@@ -52,7 +52,7 @@ const PrivateEmail = () => {
                                     <td className="py-10 px-4 mb-3 text-left w-[25%]">{product.domain}</td>
                                     <td className="py-10 px-4 mb-3 text-left w-[25%]">{product.expiry_date}</td>
                                     <td className="py-10 px-4 mb-3 text-left w-[25%]">
-                                        <Link href={product.url} target="_blank" className="w-full flex h-max bg-primary py-2 rounded items-center justify-center">{product.text}</Link>
+                                        <Link href={product.product === "email" ? product.url + "&id=" + product.product_id  : product.url} target="_blank" className="w-full flex h-max bg-primary py-2 rounded items-center justify-center">{product.text}</Link>
                                     </td>
                                 </tr>
                             ))
