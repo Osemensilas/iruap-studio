@@ -1,0 +1,19 @@
+User-agent: *
+Allow: /
+
+Disallow: /dashboard
+Disallow: /cart
+Disallow: /domain-list
+Disallow: /edit-profile
+Disallow: /manage-domain
+Disallow: /support
+Disallow: /expiring
+Disallow: /hosting-list
+Disallow: /manage-ssl
+Disallow: /manage-email
+Disallow: /private-email
+Disallow: /profile
+Disallow: /two-fa-auth
+
+
+Sitemap: https://iruhost.com/sitemap.xml

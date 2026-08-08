@@ -1,0 +1,28 @@
+.blogContainer h2{
+    font-weight: 600;
+    font-size: 30px;
+    margin-bottom: 30px;
+    line-height: 40px;
+}
+
+.blogContainer p{
+    font-weight: 400;
+    font-size: 17px;
+    margin-bottom: 30px;
+    line-height: 24px;
+}
+
+.blogContainer ul{
+    list-style: disc;
+    margin-bottom: 30px;
+    margin-left: 40px;
+}
+
+.blogContainer ul li{
+    margin-bottom: 5px;
+}
+
+.blogContainer a{
+    color: blue;
+    text-decoration: underline;
+}
