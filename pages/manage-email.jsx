@@ -75,7 +75,7 @@ const ManageEmail = () => {
             <h2 className="text-xl">Create Email</h2>
             <input className="" value={domain} name="domain" onChange={(e) => setDomain(e.target.value)} id="domain" hidden />
             <div className="h-max w-full mb-4">
-                <form onSubmit={(e) => e.preventDefault()} className="h-max w-full flex flex-col gap-3 pr-0 sm:pr-40">
+                <form onSubmit={(e) => e.preventDefault()} className="h-max w-full flex flex-col gap-3 pr-0 sm:pr-60">
                     <div className={`text-accent bg-danger w-full h-max py-2 text-center rounded
                         ${error ? "" : "hidden"}
                         `}>{error}</div>
@@ -85,7 +85,7 @@ const ManageEmail = () => {
                             <div className="h-10 w-10 border border-grey bg-grey rounded-l flex items-center justify-center">
                                 <i className="fa fa-globe text-accent"></i>
                             </div>
-                            <input type="text" name="mailbox" value={formData.mailbox} onChange={handleChanged} placeholder="info" className="h-10 w-full border text-accent outline-none border-silver mb-1 rounded-r px-2 bg-transparent" />
+                            <input type="text" name="mailbox" value={formData.mailbox} onChange={handleChanged} placeholder="info" className="h-10 w-full border text-accent outline-none border-silver mb-1 px-2 bg-transparent" />
                             <div className="h-10 w-max px-5 border border-grey rounded-r text-sm flex items-center justify-center">{domain}</div>
                         </div>
                         <p className="text-sm text-text">This will create info@{domain}</p>
