@@ -20,7 +20,7 @@ const ManageEmail = () => {
 
     const fetchEmails = useCallback(async () => {
 
-        console.log("domain: ", domain);
+        console.log("domain: ", mainDomain);
 
         let url = "https://backend.iruhost.com/api/fetch-mailcow-mail";
 
@@ -38,7 +38,7 @@ const ManageEmail = () => {
         } catch (error) {
             console.log(error.response);
         }
-    },[])
+    },[mainDomain])
 
     useEffect(() => {
         if (!mainDomain) return;
