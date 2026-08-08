@@ -1,5 +1,5 @@
 import { useSearchParams } from "next/navigation";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import axios from 'axios';
 import Head from 'next/head';
 
@@ -18,10 +18,30 @@ const ManageEmail = () => {
     const [error, setError] = useState("");
     const [allMails, setAllMail] = useState([]);
 
+    const fetchEmails = useCallback(async () => {
+        let url = "https://backend.iruhost.com/api/fetch-mailcow-mail";
+
+        try {
+            const response = await axios.get(url, {
+                params: {
+                    domain: mainDomain,
+                },
+                headers: {
+                    "Content-Type" : "application/json"
+                },withCredentials: true
+            });
+
+            console.log(response.data);
+        } catch (error) {
+            console.log(error.response);
+        }
+    },[])
+
     useEffect(() => {
         if (!mainDomain) return;
 
         setDomain(mainDomain);
+        fetchEmails();
     },[mainDomain])
 
     const handleChanged = (e) => {
@@ -59,6 +79,13 @@ const ManageEmail = () => {
             })
 
             console.log(response.data);
+            if (response.data.status === "error"){
+                setError("response.data.message");
+            }
+
+            if (response.data.status === "success"){
+                fetchEmails();
+            }
         } catch (error) {
             console.log("Error sending data: ", error);
         }
