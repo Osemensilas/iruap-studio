@@ -20,6 +20,8 @@ const ManageEmail = () => {
 
     const fetchEmails = useCallback(async () => {
 
+        console.log("domain: ", domain);
+
         let url = "https://backend.iruhost.com/api/fetch-mailcow-mail";
 
         try {
