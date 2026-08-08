@@ -66,7 +66,16 @@ const ManageEmail = () => {
     }
 
     const showPass = (e) => {
-        const passwordType = e.currentTarget.parentElement.children[1].type;
+        let passwordType = e.currentTarget.parentElement.children[1].type;
+        let seeText = e.currentTarget.innerText;
+
+        if (passwordType === "password"){
+            passwordType === "text";
+            seeText === "Hide";
+        }else{
+            passwordType === "password";
+            seeText === "Show";
+        }
 
         console.log(passwordType);
     }
