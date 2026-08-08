@@ -20,14 +20,16 @@ const ManageEmail = () => {
 
     const fetchEmails = useCallback(async () => {
 
-        console.log("domain: ", domain);
+        if (!mainDomain) return;
+
+        console.log("domain: ", mainDomain);
 
         let url = "https://backend.iruhost.com/api/fetch-mailcow-mail";
 
         try {
             const response = await axios.get(url, {
                 params: {
-                    domain: domain,
+                    domain: mainDomain,
                 },
                 headers: {
                     "Content-Type" : "application/json"
