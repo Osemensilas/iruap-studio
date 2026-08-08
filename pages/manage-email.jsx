@@ -32,7 +32,7 @@ const ManageEmail = () => {
 
     const createEmail = async () => {
 
-        if (!domain || !formData.password || !formData.confirmPassword || formData.mailbox){
+        if (!domain || !formData.password || !formData.confirmPassword || !formData.mailbox){
             setError("All Field Required");
             return;
         }
