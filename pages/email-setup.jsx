@@ -119,7 +119,7 @@ const EmailSetup = () => {
                     </div>
                     <div className="h-max w-full gap-4 flex flex-col">
                         <label htmlFor="domain" className="text-base text-accent">Domain Name</label>
-                        <div className="h-max w-full flex items-center">
+                        <div className="h-max w-full flex">
                             <div className="h-10 w-10 border border-grey bg-grey rounded-l flex items-center justify-center">
                                 <i className="fa fa-globe text-accent"></i>
                             </div>
