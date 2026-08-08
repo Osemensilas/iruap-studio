@@ -100,7 +100,7 @@ const ManageEmail = () => {
                             <div className="h-10 w-10 border border-grey bg-grey rounded-l flex items-center justify-center">
                                 <i className="fa fa-globe text-accent"></i>
                             </div>
-                            <input type="text" name="mailbox" value={formData.mailbox} onChange={handleChanged} placeholder="info" className="h-10 w-full border text-accent outline-none border-silver mb-1 px-2 bg-transparent" />
+                            <input type="text" name="mailbox" value={formData.mailbox} onChange={handleChanged} placeholder="info" className="h-10 w-full border text-text outline-none border-silver mb-1 px-2 bg-transparent" />
                             <div className="h-10 w-max px-5 border border-grey rounded-r text-sm flex items-center justify-center">{domain}</div>
                         </div>
                         <p className="text-sm text-text">This will create info@{domain}</p>
@@ -111,7 +111,7 @@ const ManageEmail = () => {
                             <div className="h-10 w-10 border border-grey bg-grey rounded-l flex items-center justify-center">
                                 <i className="fa fa-lock text-accent"></i>
                             </div>
-                            <input type="password" name="password" value={formData.password} onChange={handleChanged} placeholder="info" className="h-10 w-full border text-accent outline-none border-silver mb-1 rounded-r px-2 bg-transparent" />
+                            <input type="password" name="password" value={formData.password} onChange={handleChanged} placeholder="info" className="h-10 w-full border text-text outline-none border-silver mb-1 rounded-r px-2 bg-transparent" />
                             <button type="button" onClick={showPass} className="absolute top-[10px] left-[95%] text-sm text-primary">Show</button>
                         </div>
                         <p className="text-sm text-text">Use a strong password to keep your email secured</p>
@@ -122,7 +122,7 @@ const ManageEmail = () => {
                             <div className="h-10 w-10 border border-grey bg-grey rounded-l flex items-center justify-center">
                                 <i className="fa fa-lock text-accent"></i>
                             </div>
-                            <input type="password" name="confirmPassword" value={formData.confirmPassword} onChange={handleChanged} placeholder="info" className="h-10 w-full border text-accent outline-none border-silver mb-1 rounded-r px-2 bg-transparent" />
+                            <input type="password" name="confirmPassword" value={formData.confirmPassword} onChange={handleChanged} placeholder="info" className="h-10 w-full border text-text outline-none border-silver mb-1 rounded-r px-2 bg-transparent" />
                             <button type="button" onClick={showPass} className="absolute top-[10px] left-[95%] text-sm text-primary">Show</button>
                         </div>
                         <p className="text-sm text-text">Re-enter your your password</p>
