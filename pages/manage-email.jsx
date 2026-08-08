@@ -75,7 +75,7 @@ const ManageEmail = () => {
             <h2 className="text-xl">Create Email</h2>
             <input className="" value={domain} name="domain" onChange={(e) => setDomain(e.target.value)} id="domain" hidden />
             <div className="h-max w-full mb-4">
-                <form onSubmit={(e) => e.preventDefault()} className="h-max w-full flex flex-col gap-3 pl-0 sm:pl-40">
+                <form onSubmit={(e) => e.preventDefault()} className="h-max w-full flex flex-col gap-3 pr-0 sm:pr-40">
                     <div className={`text-accent bg-danger w-full h-max py-2 text-center rounded
                         ${error ? "" : "hidden"}
                         `}>{error}</div>
@@ -97,7 +97,7 @@ const ManageEmail = () => {
                                 <i className="fa fa-lock text-accent"></i>
                             </div>
                             <input type="password" name="mailbox" value={formData.password} onChange={handleChanged} placeholder="info" className="h-10 w-full border text-accent outline-none border-silver mb-1 rounded-r px-2 bg-transparent" />
-                            <button className="absolute top-[20px] left-[90%]">Show</button>
+                            <button type="button" className="absolute top-[10px] left-[90%] text-sm text-primary">Show</button>
                         </div>
                         <p className="text-sm text-text">Use a strong password to keep your email secured</p>
                     </div>
