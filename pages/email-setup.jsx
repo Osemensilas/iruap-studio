@@ -60,6 +60,8 @@ const EmailSetup = () => {
                 },withCredentials: true
             })
 
+            console.log(response.data);
+
             if (response.data.status === 'success'){
                 navigate.push('/cart');
             }
