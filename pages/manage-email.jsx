@@ -7,6 +7,7 @@ const ManageEmail = () => {
 
     const searchParams = useSearchParams();
     const mainDomain = searchParams.get('email');
+    const productId = searchParams.get('id');
 
     const [domain, setDomain] = useState("");
     const [formData, setFormData] = useState({
@@ -49,7 +50,8 @@ const ManageEmail = () => {
             const response = await axios.post(url, {
                 username: username,
                 password: password,
-                domain: domain
+                domain: domain,
+                id: productId
             }, {
                 headers: {
                     "Content-Type" : "appication/json"
