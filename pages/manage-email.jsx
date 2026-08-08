@@ -9,8 +9,11 @@ const ManageEmail = () => {
     const mainDomain = searchParams.get('email');
 
     const [domain, setDomain] = useState("");
-    const [username, setUsername] = useState("");
-    const [password, setPassword] = useState("");
+    const [formData, setFormData] = useState({
+        mailbox: '',
+        password: '',
+        confirmPassword: ''
+    });
     const [error, setError] = useState("");
     const [allMails, setAllMail] = useState([]);
 
@@ -19,6 +22,12 @@ const ManageEmail = () => {
 
         setDomain(mainDomain);
     },[mainDomain])
+
+    const handleChanged = (e) => {
+        const { name, value } = e.target;
+
+        setFormData({...formData, [name]: value});
+    }
 
     const createEmail = async () => {
 
@@ -70,20 +79,40 @@ const ManageEmail = () => {
                     <div className={`text-accent bg-danger w-full h-max py-2 text-center rounded
                         ${error ? "" : "hidden"}
                         `}>{error}</div>
-                    <div className="h-max w-full">
-                        <label htmlFor="username" className="text-grey text-base">Username:</label>   
-                        <div className="h-max w-full flex items-center gap-3">
-                            <input name="username" value={username} onChange={(e) => setUsername(e.target.value)} className="w-[50%] h-10 rounded border px-5 border-grey" id="username" />
-                            <div className="w-[50%] h-10 rounded border px-5 border-grey flex items-center">@{mainDomain}</div>
+                    <div className="h-max w-full gap-4 flex flex-col">
+                        <label htmlFor="mailbox" className="text-base text-accent">Mailbox</label>
+                        <div className="h-max w-full flex">
+                            <div className="h-10 w-10 border border-grey bg-grey rounded-l flex items-center justify-center">
+                                <i className="fa fa-globe text-accent"></i>
+                            </div>
+                            <input type="text" name="mailbox" value={formData.mailbox} onChange={handleChanged} placeholder="info" className="h-10 w-full border text-accent outline-none border-silver mb-1 rounded-r px-2 bg-transparent" />
+                            <div className="h-10 w-10 px-5 rounded-r text-sm flex items-center justify-center">{domain}</div>
                         </div>
+                        <p className="text-sm text-grey">This will create info@example.com</p>
                     </div>
-                    <div className="h-max w-full flex flex-col">
-                        <label htmlFor="password" className="text-grey text-base">Password:</label>   
-                        <input name="password" value={password} onChange={(e) => setPassword(e.target.value)} className="w-[50%] h-10 rounded border px-5 border-grey" id="password" />
+                    <div className="h-max w-full gap-4 flex flex-col">
+                        <label htmlFor="password" className="text-base text-accent">Password</label>
+                        <div className="h-max w-full flex">
+                            <div className="h-10 w-10 border border-grey bg-grey rounded-l flex items-center justify-center">
+                                <i className="fa fa-globe text-lock"></i>
+                            </div>
+                            <input type="text" name="mailbox" value={formData.password} onChange={handleChanged} placeholder="info" className="h-10 w-full border text-accent outline-none border-silver mb-1 rounded-r px-2 bg-transparent" />
+                        </div>
+                        <p className="text-sm text-grey">Use a strong password to keep your email secured</p>
+                    </div>
+                    <div className="h-max w-full gap-4 flex flex-col">
+                        <label htmlFor="confirmPassword" className="text-base text-accent">Confirm Password</label>
+                        <div className="h-max w-full flex">
+                            <div className="h-10 w-10 border border-grey bg-grey rounded-l flex items-center justify-center">
+                                <i className="fa fa-globe text-lock"></i>
+                            </div>
+                            <input type="text" name="confirmPasswor" value={formData.confirmPassword} onChange={handleChanged} placeholder="info" className="h-10 w-full border text-accent outline-none border-silver mb-1 rounded-r px-2 bg-transparent" />
+                        </div>
+                        <p className="text-sm text-grey">Re-enter your your password</p>
                     </div>
                     <div className="h-max w-full">
                         <button onClick={createEmail} className="bg-primary text-accent py-2 px-5 rounded">Create</button>
-                    </div>                  
+                    </div>             
                 </form>
             </div>
             <h2 className="text-xl mt-5">All Mails</h2>
