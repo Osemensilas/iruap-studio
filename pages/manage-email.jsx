@@ -31,12 +31,17 @@ const ManageEmail = () => {
 
     const createEmail = async () => {
 
-        if (!domain || !username || !password){
+        if (!domain || !formData.password || !formData.confirmPassword || formData.mailbox){
             setError("All Field Required");
             return;
-        }else{
-            setError("");
         }
+
+        if (formData.confirmPassword != formData.password){
+            setError("Password do not match");
+            return;
+        }
+
+        setError("");
 
         const url = "https://backend.iruhost.com/api/create-mailcow-mail";
         
@@ -67,7 +72,6 @@ const ManageEmail = () => {
 
     const showPass = (e) => {
         let passwordInput = e.currentTarget.parentElement.children[1];
-        let seeText = e.currentTarget.innerText;
 
         if (passwordInput.type === "password") {
             passwordInput.type = "text";
@@ -76,8 +80,6 @@ const ManageEmail = () => {
             passwordInput.type = "password";
             e.currentTarget.innerText = "Show";
         }
-
-        console.log(password.type);
     }
 
     return ( 
