@@ -70,11 +70,11 @@ const ManageEmail = () => {
         let seeText = e.currentTarget.innerText;
 
         if (passwordType === "password"){
-            passwordType === "text";
-            seeText === "Hide";
+            passwordType = "text";
+            seeText = "Hide";
         }else{
-            passwordType === "password";
-            seeText === "Show";
+            passwordType = "password";
+            seeText = "Show";
         }
 
         console.log(passwordType);
