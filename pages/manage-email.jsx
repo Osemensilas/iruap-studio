@@ -20,9 +20,7 @@ const ManageEmail = () => {
 
     const fetchEmails = useCallback(async () => {
 
-        if (!mainDomain) return;
-
-        console.log("domain: ", mainDomain);
+        console.log("domain: ", domain);
 
         let url = "https://backend.iruhost.com/api/fetch-mailcow-mail";
 
@@ -134,7 +132,7 @@ const ManageEmail = () => {
                         <label htmlFor="mailbox" className="text-base text-accent">Mailbox</label>
                         <div className="h-max w-full flex">
                             <div className="h-10 w-10 border border-grey bg-grey rounded-l flex items-center justify-center">
-                                <i className="fa fa-globe text-accent"></i>
+                                <i className="fa fa-envelope text-accent"></i>
                             </div>
                             <input type="text" name="mailbox" value={formData.mailbox} onChange={handleChanged} placeholder="info" className="h-10 w-full border text-text outline-none border-silver mb-1 px-2 bg-transparent" />
                             <div className="h-10 w-max px-5 border border-grey rounded-r text-sm flex items-center justify-center">{domain}</div>
