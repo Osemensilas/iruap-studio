@@ -88,7 +88,7 @@ const ManageEmail = () => {
                             <input type="text" name="mailbox" value={formData.mailbox} onChange={handleChanged} placeholder="info" className="h-10 w-full border text-accent outline-none border-silver mb-1 rounded-r px-2 bg-transparent" />
                             <div className="h-10 w-max px-5 border border-grey rounded-r text-sm flex items-center justify-center">{domain}</div>
                         </div>
-                        <p className="text-sm text-grey">This will create info@example.com</p>
+                        <p className="text-sm text-text">This will create info@{domain}</p>
                     </div>
                     <div className="h-max w-full gap-4 flex flex-col">
                         <label htmlFor="password" className="text-base text-accent">Password</label>
@@ -99,7 +99,7 @@ const ManageEmail = () => {
                             <input type="password" name="mailbox" value={formData.password} onChange={handleChanged} placeholder="info" className="h-10 w-full border text-accent outline-none border-silver mb-1 rounded-r px-2 bg-transparent" />
                             <button className="absolute top-[20px] left-[90%]">Show</button>
                         </div>
-                        <p className="text-sm text-grey">Use a strong password to keep your email secured</p>
+                        <p className="text-sm text-text">Use a strong password to keep your email secured</p>
                     </div>
                     <div className="h-max w-full gap-4 flex flex-col">
                         <label htmlFor="confirmPassword" className="text-base text-accent">Confirm Password</label>
@@ -109,7 +109,7 @@ const ManageEmail = () => {
                             </div>
                             <input type="password" name="confirmPasswor" value={formData.confirmPassword} onChange={handleChanged} placeholder="info" className="h-10 w-full border text-accent outline-none border-silver mb-1 rounded-r px-2 bg-transparent" />
                         </div>
-                        <p className="text-sm text-grey">Re-enter your your password</p>
+                        <p className="text-sm text-text">Re-enter your your password</p>
                     </div>
                     <div className="h-max w-full">
                         <button onClick={createEmail} className="bg-primary text-accent py-2 px-5 rounded">Create</button>
