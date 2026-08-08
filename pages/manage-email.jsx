@@ -48,8 +48,8 @@ const ManageEmail = () => {
         
         try {
             const response = await axios.post(url, {
-                username: username,
-                password: password,
+                username: formData.mailbox,
+                password: formData.password,
                 domain: domain,
                 id: productId
             }, {
