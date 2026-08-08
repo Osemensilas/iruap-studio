@@ -46,6 +46,8 @@ const Dashboard = () => {
             
             if (response.data.status === 'success'){
                 setProducts(response.data.products);
+
+
             }
         }
 
@@ -166,7 +168,7 @@ const Dashboard = () => {
                                                             product.text === "Cpanel" ? (
                                                                <button onClick={() => openCpanel(product.product_id)} className="w-full flex h-max bg-primary py-2 rounded items-center justify-center">cPanel</button> 
                                                             ) : (
-                                                                <Link href={product.url} className="w-full flex h-max bg-primary py-2 rounded items-center justify-center">{product.text}</Link>
+                                                                <Link href={product.product === "email" ? product.url + "id=" + product.product_id  : product.url} className="w-full flex h-max bg-primary py-2 rounded items-center justify-center">{product.text}</Link>
                                                             )
                                                         }
                                                     </div>
