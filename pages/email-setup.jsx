@@ -134,7 +134,7 @@ const EmailSetup = () => {
             </div>
             <div className="h-full w-full sm:w-[50%] sm:px-10 px-5 py-5 sm:py-10">
                 <div className="relative h-40 w-40 mb-10">
-                    <Image src="/" alt="Email Image" className="object-fill" fill />
+                    <Image src="/email-with-yellow-envelope.png" alt="Email Image" className="object-fill" fill />
                 </div>
                 <h2 className="text-grey text-3xl my-10">Why Professional Email?</h2>
                 <div className="flex flex-col w-full h-max gap-4">
