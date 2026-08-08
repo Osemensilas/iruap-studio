@@ -38,7 +38,7 @@ const ManageEmail = () => {
             setError("");
         }
 
-        const url = "https://backend.iruhost.com/api/create-cpanel-mail";
+        const url = "https://backend.iruhost.com/api/create-mailcow-mail";
         
         try {
             const response = await axios.post(url, {
@@ -75,7 +75,7 @@ const ManageEmail = () => {
             <h2 className="text-xl">Create Email</h2>
             <input className="" value={domain} name="domain" onChange={(e) => setDomain(e.target.value)} id="domain" hidden />
             <div className="h-max w-full mb-4">
-                <form onSubmit={(e) => e.preventDefault()} className="h-max w-full flex flex-col gap-3">
+                <form onSubmit={(e) => e.preventDefault()} className="h-max w-full flex flex-col gap-3 pl-0 sm:pl-40">
                     <div className={`text-accent bg-danger w-full h-max py-2 text-center rounded
                         ${error ? "" : "hidden"}
                         `}>{error}</div>
@@ -86,7 +86,7 @@ const ManageEmail = () => {
                                 <i className="fa fa-globe text-accent"></i>
                             </div>
                             <input type="text" name="mailbox" value={formData.mailbox} onChange={handleChanged} placeholder="info" className="h-10 w-full border text-accent outline-none border-silver mb-1 rounded-r px-2 bg-transparent" />
-                            <div className="h-10 w-10 px-5 rounded-r text-sm flex items-center justify-center">{domain}</div>
+                            <div className="h-10 w-max px-5 border border-grey rounded-r text-sm flex items-center justify-center">{domain}</div>
                         </div>
                         <p className="text-sm text-grey">This will create info@example.com</p>
                     </div>
@@ -94,7 +94,7 @@ const ManageEmail = () => {
                         <label htmlFor="password" className="text-base text-accent">Password</label>
                         <div className="h-max w-full flex">
                             <div className="h-10 w-10 border border-grey bg-grey rounded-l flex items-center justify-center">
-                                <i className="fa fa-globe text-lock"></i>
+                                <i className="fa fa-lock text-accent"></i>
                             </div>
                             <input type="text" name="mailbox" value={formData.password} onChange={handleChanged} placeholder="info" className="h-10 w-full border text-accent outline-none border-silver mb-1 rounded-r px-2 bg-transparent" />
                         </div>
@@ -104,7 +104,7 @@ const ManageEmail = () => {
                         <label htmlFor="confirmPassword" className="text-base text-accent">Confirm Password</label>
                         <div className="h-max w-full flex">
                             <div className="h-10 w-10 border border-grey bg-grey rounded-l flex items-center justify-center">
-                                <i className="fa fa-globe text-lock"></i>
+                                <i className="fa fa-lock text-accent"></i>
                             </div>
                             <input type="text" name="confirmPasswor" value={formData.confirmPassword} onChange={handleChanged} placeholder="info" className="h-10 w-full border text-accent outline-none border-silver mb-1 rounded-r px-2 bg-transparent" />
                         </div>
