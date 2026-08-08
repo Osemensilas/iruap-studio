@@ -19,6 +19,9 @@ const ManageEmail = () => {
     const [allMails, setAllMail] = useState([]);
 
     const fetchEmails = useCallback(async () => {
+
+        if (!mainDomain) return;
+        
         let url = "https://backend.iruhost.com/api/fetch-mailcow-mail";
 
         try {
