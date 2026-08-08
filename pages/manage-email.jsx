@@ -92,11 +92,12 @@ const ManageEmail = () => {
                     </div>
                     <div className="h-max w-full gap-4 flex flex-col">
                         <label htmlFor="password" className="text-base text-accent">Password</label>
-                        <div className="h-max w-full flex">
+                        <div className="h-max w-full flex relative">
                             <div className="h-10 w-10 border border-grey bg-grey rounded-l flex items-center justify-center">
                                 <i className="fa fa-lock text-accent"></i>
                             </div>
-                            <input type="text" name="mailbox" value={formData.password} onChange={handleChanged} placeholder="info" className="h-10 w-full border text-accent outline-none border-silver mb-1 rounded-r px-2 bg-transparent" />
+                            <input type="password" name="mailbox" value={formData.password} onChange={handleChanged} placeholder="info" className="h-10 w-full border text-accent outline-none border-silver mb-1 rounded-r px-2 bg-transparent" />
+                            <button className="absolute top-[20px] left-[90%]">Show</button>
                         </div>
                         <p className="text-sm text-grey">Use a strong password to keep your email secured</p>
                     </div>
@@ -106,7 +107,7 @@ const ManageEmail = () => {
                             <div className="h-10 w-10 border border-grey bg-grey rounded-l flex items-center justify-center">
                                 <i className="fa fa-lock text-accent"></i>
                             </div>
-                            <input type="text" name="confirmPasswor" value={formData.confirmPassword} onChange={handleChanged} placeholder="info" className="h-10 w-full border text-accent outline-none border-silver mb-1 rounded-r px-2 bg-transparent" />
+                            <input type="password" name="confirmPasswor" value={formData.confirmPassword} onChange={handleChanged} placeholder="info" className="h-10 w-full border text-accent outline-none border-silver mb-1 rounded-r px-2 bg-transparent" />
                         </div>
                         <p className="text-sm text-grey">Re-enter your your password</p>
                     </div>
