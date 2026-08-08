@@ -126,7 +126,7 @@ const ManageEmail = () => {
                     <div className={`text-accent bg-danger w-full h-max py-2 text-center rounded
                         ${error ? "" : "hidden"}
                         `}>{error}</div>
-                    <div className="h-max w-full gap-4 flex flex-col">
+                    <div className="h-max w-full gap-2 flex flex-col">
                         <label htmlFor="mailbox" className="text-base text-accent">Mailbox</label>
                         <div className="h-max w-full flex">
                             <div className="h-10 w-10 border border-grey bg-grey rounded-l flex items-center justify-center">
@@ -135,9 +135,9 @@ const ManageEmail = () => {
                             <input type="text" name="mailbox" value={formData.mailbox} onChange={handleChanged} placeholder="info" className="h-10 w-full border text-text outline-none border-silver mb-1 px-2 bg-transparent" />
                             <div className="h-10 w-max px-5 border border-grey rounded-r text-sm flex items-center justify-center">{domain}</div>
                         </div>
-                        <p className="text-sm text-text">This will create info@{domain}</p>
+                        <p className="text-sm text-grey">This will create info@{domain}</p>
                     </div>
-                    <div className="h-max w-full gap-4 flex flex-col">
+                    <div className="h-max w-full gap-2 flex flex-col">
                         <label htmlFor="password" className="text-base text-accent">Password</label>
                         <div className="h-max w-full flex relative">
                             <div className="h-10 w-10 border border-grey bg-grey rounded-l flex items-center justify-center">
@@ -146,9 +146,9 @@ const ManageEmail = () => {
                             <input type="password" name="password" value={formData.password} onChange={handleChanged} className="h-10 w-full border text-text outline-none border-silver mb-1 rounded-r px-2 bg-transparent" />
                             <button type="button" onClick={showPass} className="absolute top-[10px] left-[95%] text-sm text-primary">Show</button>
                         </div>
-                        <p className="text-sm text-text">Use a strong password to keep your email secured</p>
+                        <p className="text-sm text-grey">Use a strong password to keep your email secured</p>
                     </div>
-                    <div className="h-max w-full gap-4 flex flex-col">
+                    <div className="h-max w-full gap-2 flex flex-col">
                         <label htmlFor="confirmPassword" className="text-base text-accent">Confirm Password</label>
                         <div className="h-max w-full flex relative">
                             <div className="h-10 w-10 border border-grey bg-grey rounded-l flex items-center justify-center">
@@ -157,7 +157,7 @@ const ManageEmail = () => {
                             <input type="password" name="confirmPassword" value={formData.confirmPassword} onChange={handleChanged} className="h-10 w-full border text-text outline-none border-silver mb-1 rounded-r px-2 bg-transparent" />
                             <button type="button" onClick={showPass} className="absolute top-[10px] left-[95%] text-sm text-primary">Show</button>
                         </div>
-                        <p className="text-sm text-text">Re-enter your your password</p>
+                        <p className="text-sm text-grey">Re-enter your your password</p>
                     </div>
                     <div className="h-max w-full">
                         <button onClick={createEmail} className="bg-primary text-accent py-2 px-5 rounded">Create</button>
