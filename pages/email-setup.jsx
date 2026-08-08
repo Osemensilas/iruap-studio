@@ -121,7 +121,7 @@ const EmailSetup = () => {
                             <div className="h-10 w-10 border border-grey bg-grey rounded-l flex items-center justify-center">
                                 <i className="fa fa-globe text-accent"></i>
                             </div>
-                            <input type="text" name="domain" value={domain} onChange={(e) => setDomain(e.value.target)} placeholder="example.com" className="h-10 w-full border text-accent outline-none border-silver mb-1 rounded-r px-2 bg-transparent" />
+                            <input type="text" name="domain" value={domain} onChange={(e) => setDomain(e.target.value)} placeholder="example.com" className="h-10 w-full border text-accent outline-none border-silver mb-1 rounded-r px-2 bg-transparent" />
                         </div>
                         <p className="text-sm text-grey">Enter your domain name</p>
                     </div>
