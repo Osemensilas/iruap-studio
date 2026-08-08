@@ -66,9 +66,9 @@ const ManageEmail = () => {
     }
 
     const showPass = (e) => {
-        const password = e.currentTarget.parentElement.children[1];
+        const passwordType = e.currentTarget.parentElement.children[1].type;
 
-        console.log(password);
+        console.log(passwordType);
     }
 
     return ( 
