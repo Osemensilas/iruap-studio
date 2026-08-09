@@ -33,6 +33,10 @@ const ManageEmail = () => {
             });
 
             console.log(response.data);
+
+            if (response.data.status === "success") {
+                setAllMail(response.data.mails);
+            }
         } catch (error) {
             console.log(error.response);
         }
