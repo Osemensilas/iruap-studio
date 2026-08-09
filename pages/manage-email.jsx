@@ -96,11 +96,23 @@ const ManageEmail = () => {
         }
     }
 
-    const deleteMail = (mailbox) => {
-        console.log("Delete Mail: ", mailbox);
+    const deleteMail = async (mailbox) => {
+
+        const url = "https://backend.iruhost.com/api/delete-mailcow-mail";
+        
+        try {
+            const response = await axios.post(url, {mailbox: mailbox}, {
+                headers: {
+                    "Content-Type" : "application/json"
+                },withCredentials: true
+            });
+            console.log(response.data);
+        } catch (error) {
+            console.log("Error sending data: ", error);
+        }
     }
 
-    const openMail = (mailbox) => {
+    const openMail = async (mailbox) => {
         console.log("Open Mail", mailbox);
     }
 
