@@ -110,6 +110,11 @@ const ManageEmail = () => {
 
             if (response.data.status === "success"){
                 fetchEmails();
+                setFormData({
+                    mailbox: '',
+                    password: '',
+                    confirmPassword: ''
+                });
             }
         } catch (error) {
             console.log("Error sending data: ", error);
