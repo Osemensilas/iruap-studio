@@ -116,8 +116,8 @@ const ManageEmail = () => {
         }
     }
 
-    const openMail = async (mailbox) => {
-        console.log("Open Mail", mailbox);
+    const openMail = async () => {
+        window.open("https://mail.iruhost.com/SOGo/", "_blank");
     }
 
     const showPass = (e) => {
