@@ -137,7 +137,7 @@ const ManageEmail = () => {
                                 <i className="fa fa-envelope text-accent"></i>
                             </div>
                             <input type="text" name="mailbox" value={formData.mailbox} onChange={handleChanged} placeholder="info" className="h-10 w-full border text-text outline-none border-silver mb-1 px-2 bg-transparent" />
-                            <div className="h-10 w-max px-5 border border-grey rounded-r text-sm flex items-center justify-center">{domain}</div>
+                            <div className="h-10 w-max px-5 border border-grey rounded-r text-sm flex items-center justify-center">@{domain}</div>
                         </div>
                         <p className="text-sm text-grey">This will create info@{domain}</p>
                     </div>
