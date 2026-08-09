@@ -170,15 +170,23 @@ const ManageEmail = () => {
             </div>
             <h2 className="text-xl mt-5">All Mails</h2>
             <div className="h-max w-full mt-3 border-t border-grey pt-10">
-                <div className="h-max w-full flex gap-3">
-                    <div className="h-max w-[75%]">
-                        <div className="w-full h-10 rounded border px-5 border-grey flex items-center">@iruhost.com</div>
-                    </div>
-                    <div className="h-max w-[25%] flex items-center gap-2">
-                        <button onClick={deleteMail} className="bg-danger text-accent p-2 rounded text-sm">Delete</button>
-                        <button onClick={openMail} className="bg-primary text-accent p-2 rounded text-sm">Open</button>
-                    </div>
-                </div>
+                {
+                    allMails.length > 0 ? (
+                        allMails.map((mailbox, index) => (
+                            <div key={index} className="h-max w-full flex gap-3">
+                                <div className="h-max w-[75%]">
+                                    <div className="w-full h-10 rounded border px-5 border-grey flex items-center">{mailbox}</div>
+                                </div>
+                                <div className="h-max w-[25%] flex items-center gap-2">
+                                    <button onClick={() => deleteMail(mailbox)} className="bg-danger text-accent p-2 rounded text-sm">Delete</button>
+                                    <button onClick={() => openMail(mailbox)} className="bg-primary text-accent p-2 rounded text-sm">Open</button>
+                                </div>
+                            </div>
+                        ))
+                    ) : (
+                        <p>No mails yet!</p>
+                    )
+                }
             </div>
         </section>
         </>
