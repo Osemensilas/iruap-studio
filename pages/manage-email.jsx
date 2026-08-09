@@ -169,7 +169,7 @@ const ManageEmail = () => {
                 </form>
             </div>
             <h2 className="text-xl mt-5">All Mails</h2>
-            <div className="h-max w-full mt-3 border-t border-grey pt-10">
+            <div className="h-max w-full mt-3 border-t border-grey pt-10 flex flex-col gap-2">
                 {
                     allMails.length > 0 ? (
                         allMails.map((mailbox, index) => (
@@ -184,7 +184,7 @@ const ManageEmail = () => {
                             </div>
                         ))
                     ) : (
-                        <p>No mails yet!</p>
+                        <p className="text-sm text-text">No mails yet!</p>
                     )
                 }
             </div>
