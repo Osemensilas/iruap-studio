@@ -32,8 +32,6 @@ const ManageEmail = () => {
                 },withCredentials: true
             });
 
-            console.log(response.data);
-
             if (response.data.status === "success") {
                 setAllMail(response.data.mails);
             }
@@ -83,7 +81,6 @@ const ManageEmail = () => {
                 },withCredentials: true
             })
 
-            console.log(response.data);
             if (response.data.status === "error"){
                 setError(response.data.message);
             }
