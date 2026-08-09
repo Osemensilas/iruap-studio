@@ -107,6 +107,10 @@ const ManageEmail = () => {
                 },withCredentials: true
             });
             console.log(response.data);
+
+            if (response.data.status === "success"){
+                fetchEmails();
+            }
         } catch (error) {
             console.log("Error sending data: ", error);
         }
