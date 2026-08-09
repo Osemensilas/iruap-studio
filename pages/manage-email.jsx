@@ -96,12 +96,12 @@ const ManageEmail = () => {
         }
     }
 
-    const deleteMail = () => {
-        console.log("Delete Mail");
+    const deleteMail = (mailbox) => {
+        console.log("Delete Mail: ", mailbox);
     }
 
-    const openMail = () => {
-        console.log("Open Mail");
+    const openMail = (mailbox) => {
+        console.log("Open Mail", mailbox);
     }
 
     const showPass = (e) => {
