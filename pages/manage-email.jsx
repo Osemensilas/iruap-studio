@@ -81,7 +81,7 @@ const ManageEmail = () => {
 
             console.log(response.data);
             if (response.data.status === "error"){
-                setError("response.data.message");
+                setError(response.data.message);
             }
 
             if (response.data.status === "success"){
